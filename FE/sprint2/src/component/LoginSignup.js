@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './LoginSignup.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../component/LoginSignup.css'
+
 
 function LoginSignup(props) {
     const [action, setAction] = useState("Login")

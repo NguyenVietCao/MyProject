@@ -1,10 +1,15 @@
-import logo from './logo.svg';
+
 import './App.css';
+import About from './component/About';
 import LoginSignup from './component/LoginSignup';
+import Navbar from './component/Navbar';
 
 function App() {
   return (
-   <LoginSignup></LoginSignup>
+    <>    
+    <Navbar></Navbar>
+    <About></About>
+    </>
   );
 }
 
