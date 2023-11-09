@@ -1,6 +1,7 @@
 package com.example.be.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "user_role")
@@ -47,4 +48,5 @@ public class UserRole {
     public void setUsers(Users users) {
         this.users = users;
     }
+
 }

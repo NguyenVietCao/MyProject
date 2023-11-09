@@ -11,15 +11,18 @@ public class Users {
     private String userName;
     private String password;
     private Boolean flag_deleted;
+    private Boolean flagOnline;
 
     public Users() {
+
     }
 
-    public Users(int id, String userName, String password, Boolean flag_deleted) {
+    public Users(int id, String userName, String password, Boolean flag_deleted, Boolean flagOnline) {
         this.id = id;
         this.userName = userName;
         this.password = password;
         this.flag_deleted = flag_deleted;
+        this.flagOnline = flagOnline;
     }
 
     public int getId() {
@@ -52,5 +55,13 @@ public class Users {
 
     public void setFlag_deleted(Boolean flag_deleted) {
         this.flag_deleted = flag_deleted;
+    }
+
+    public Boolean getFlagOnline() {
+        return flagOnline;
+    }
+
+    public void setFlagOnline(Boolean flagOnline) {
+        this.flagOnline = flagOnline;
     }
 }
