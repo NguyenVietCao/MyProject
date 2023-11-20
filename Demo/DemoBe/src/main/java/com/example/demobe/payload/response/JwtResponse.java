@@ -8,14 +8,24 @@ public class JwtResponse {
     private String userName;
     private String email;
     private String phone;
+    private Integer id;
     private List<String> listRoles;
 
-    public JwtResponse(String token, String userName, String email, String phone, List<String> listRoles) {
+    public JwtResponse(String token, String userName, String email, String phone, List<String> listRoles,Integer id) {
         this.token = token;
         this.userName = userName;
         this.email = email;
         this.phone = phone;
         this.listRoles = listRoles;
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getToken() {

@@ -9,6 +9,9 @@ import { axiosClient } from './components/AxiosClient';
 import Footer from './components/Footer';
 import Product from './components/Product';
 import { useState } from 'react';
+import ProductList from './components/ProductList';
+import Detail from './components/Detail';
+import Cart from './components/Cart';
 
 function App() {
   axiosClient();
@@ -25,7 +28,10 @@ function App() {
         <Route path="*" element={<Home />} />
       <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/product' element={ <Product/>} />
+        <Route path='/product' element={<Product />} />
+        <Route path='/wareHouse' element={<ProductList />} />
+        <Route path='/detail/:id' element={<Detail />} />
+        <Route path='/cart' element={ <Cart/>} />
       </Routes>
       <Footer/>
     </>

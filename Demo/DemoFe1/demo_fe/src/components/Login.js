@@ -2,7 +2,7 @@ import { Field, Formik,Form } from 'formik';
 import * as Yup from 'yup'
 import React,{useState} from 'react';
 import { login } from '../service/UserService';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import './Header';
 
@@ -29,10 +29,11 @@ function Login() {
                         
                             try {
                                 const data = await login(value)
-                               localStorage.setItem("JWT", data.token);
+                                localStorage.setItem("JWT", data.token);
+                                localStorage.setItem("id", data.id);
                                Swal.fire({
                                    icon: "success",
-                                   title: "Đăng ký thành công !",
+                                   title: "Đăng nhập thành công !",
                                    showConfirmButton: false,
                                    timer: 2000,
                                    customClass: {
@@ -101,9 +102,9 @@ function Login() {
                         </div>
                         <div className="mb-0" style={{ float: "right" }}>
                             Bạn chưa có tài khoản?
-                            <a href="NhatNHH_signup.html" className="text-primary fw-bold">
+                            <Link to={'/signup'} className="text-primary fw-bold">
                                 Đăng ký
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

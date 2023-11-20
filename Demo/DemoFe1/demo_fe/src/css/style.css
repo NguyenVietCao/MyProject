@@ -336,7 +336,7 @@
 
 /*** Product ***/
 .product-item {
-  position: relative;
+  /* position: relative; */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.07);
@@ -355,6 +355,7 @@
   opacity: 0;
   padding-top: 60px;
   transition: 0.5s;
+  
 }
 
 .product-item:hover .product-overlay {

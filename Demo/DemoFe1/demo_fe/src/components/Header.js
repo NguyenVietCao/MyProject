@@ -69,9 +69,9 @@ function Header() {
                             <a href="feature.html" className="dropdown-item">
 
                             </a>
-                            <a href="team.html" className="dropdown-item">
+                            <Link to={'/wareHouse'} className="dropdown-item">
                                 Warehouse
-                            </a>
+                            </Link>
                             <a href="testimonial.html" className="dropdown-item">
                                 Suplier
                             </a>
@@ -95,9 +95,9 @@ function Header() {
                     <button type="button" className="btn btn-sm p-0 w-25">
                         <i className="fa fa-search" />
                     </button>
-                    <button type="button" className="btn btn-sm p-0 w-25">
-                        <i className="fa-solid fa-cart-shopping"></i>
-                    </button>
+                    <Link to={"/cart"} className="btn btn-sm p-0 w-25">
+                        <i className="fa-solid fa-cart-shopping"><sup style={{color:"red"}}>2</sup></i>
+                    </Link>
                 </div>
                 <div className="border-start ps-4 d-none d-lg-flex">
                     {isLogin ? <button type="button" className="btn btn-sm p-2 w-30">

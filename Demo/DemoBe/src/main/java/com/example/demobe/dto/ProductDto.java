@@ -1,14 +1,14 @@
-package com.example.demobe.model;
+package com.example.demobe.dto;
 
-import javax.persistence.*;
+import com.example.demobe.model.ProductType;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
+
 import java.time.LocalDate;
 
-@Entity
-@Table
-public class Products {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class ProductDto implements Validator {
+    private int idProduct;
     private String productName;
     private Double price;
     private String capacity;
@@ -16,16 +16,13 @@ public class Products {
     private String unit;
     private LocalDate expiry;
     private String images;
-    private String quantity;
-    @ManyToOne
-    @JoinColumn(name = "product_type_id")
     private ProductType productType;
 
-    public Products() {
+    public ProductDto() {
     }
 
-    public Products(int id, String productName, Double price, String capacity, String description, String unit, LocalDate expiry, String images, String quantity, ProductType productType) {
-        this.id = id;
+    public ProductDto(int idProduct, String productName, Double price, String capacity, String description, String unit, LocalDate expiry, String images, ProductType productType) {
+        this.idProduct = idProduct;
         this.productName = productName;
         this.price = price;
         this.capacity = capacity;
@@ -33,16 +30,15 @@ public class Products {
         this.unit = unit;
         this.expiry = expiry;
         this.images = images;
-        this.quantity = quantity;
         this.productType = productType;
     }
 
-    public int getId() {
-        return id;
+    public int getIdProduct() {
+        return idProduct;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdProduct(int idProduct) {
+        this.idProduct = idProduct;
     }
 
     public String getProductName() {
@@ -101,19 +97,21 @@ public class Products {
         this.images = images;
     }
 
-    public String getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
-    }
-
     public ProductType getProductType() {
         return productType;
     }
 
     public void setProductType(ProductType productType) {
         this.productType = productType;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+
     }
 }

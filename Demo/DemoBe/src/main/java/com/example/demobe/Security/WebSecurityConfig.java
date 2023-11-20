@@ -47,8 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors()// ngan chang request tu cac domain khac
                 .and().csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/v1/auth/**").permitAll() //cho phep tat ca moi nguoi
-                .antMatchers("/api/v1/test/**").permitAll()
+                .antMatchers("/api/**").permitAll()
                 .anyRequest().authenticated(); // Tat ca cac request khac deu can phai xac thuc moi
         // Them mot lop Filter kiem tra jwt
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
